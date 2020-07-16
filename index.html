@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="addItem.js"></script>
+    <title>To-do List - JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-<label for="item-input">Input item</label>
-<input id="item-input" type="text" />
-<button id="add-button">Add item</button>
-<ul id="my-list"></ul>
-<script type="module">
-    import enableAddingItems from "./addItem.js";
-    enableAddingItems();
-
-    import uploadTasks from "./uploadTasks.js";
-    uploadTasks();
-
-</script>
+<div class="container">
+    <div class="header">
+        <div class="clear-list">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+        </div>
+        <div id="date"></div>
+    </div>
+    <div class="content">
+        <ul id="the-list">
+            <li class="item">
+                <i class="fa fa-circle-thin complete"></i>
+                <p class="text">Drink Coffee</p>
+                <i class="fa fa-trash-o delete"></i>
+            </li>
+        </ul>
+        <div class="add-item">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <input type="text" id="item-input" placeholder="Add to to-do">
+        </div>
+    </div>
+</div>
 </body>
 </html>
