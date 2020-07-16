@@ -1,3 +1,107 @@
 body {
     font-family: 'Titillium Web', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
+.container{
+    width: 600px;
+    padding: 10px;
+    margin: 0;
+}
+.header{
+    width: 100%;
+    height: 200px;
+    background-color: dodgerblue;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+.clear-button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.clear-button i{
+    font-size: 30px;
+    color: white;
+}
+.clear-button i:hover{
+    cursor: pointer;
+    font-weight: bolder;
+    transform: rotate(45deg);
+}
+#date{
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}
+.content{
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    position: relative;
+}
+.list{
+    margin: 0;
+    padding: 0;
+    height: 330px;
+    overflow: auto;
+}
+.list::-webkit-scrollbar{
+    display: none;
+}
+#the-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+}
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    margin: 5px;
+    border-bottom: 1px solid lightgray;
+}
+.item p{
+    margin: 10px;
+}
+.item i:hover{
+    cursor: pointer;
+}
+.fa-trash-o{
+    font-size: 20px;
+    margin-left: auto;
+}
+.fa-trash-o:hover{
+    color: darkred;
+}
+.fa-check-circle {
+    color: green;
+}
+.lineThrough{
+    text-decoration: line-through;
+    color: gray;
+}
+.add-item{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.fa-plus-circle {
+    font-size: 36px;
+    color: dodgerblue;
+}
+#item-input{
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 2px;
+}
+
