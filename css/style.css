@@ -42,9 +42,10 @@ body {
 }
 .content{
     width: 100%;
-    height: 400px;
-    background-color: white;
+    height: 450px;
     position: relative;
+    background-color: #FFFCE5;
+    border-radius: 0 0 15px 15px;
 }
 .list{
     margin: 0;
@@ -91,7 +92,7 @@ body {
 .add-item{
     position: absolute;
     left: 20px;
-    bottom: 10px;
+    bottom: 20px;
     display: flex;
     align-items: center;
 }
@@ -102,6 +103,10 @@ body {
 #item-input{
     margin-left: 10px;
     font-size: 18px;
-    padding: 2px;
+    padding: 5px;
+    background: none;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 300px;
 }
 
