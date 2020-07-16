@@ -1,4 +1,12 @@
-function addItem(text, id, done, trash) {
+import {getList, getId} from "./list.js";
+import {setList, setId} from "./list.js";
+import {incrementId} from "./list.js";
+
+const CHECK = 'fa-check-circle';
+const UNCHECK = 'fa-circle-thin';
+const LINE_THROUGH = 'lineThrough';
+
+export function addItem(list, text, id, done, trash) {
     if (trash) {return;}
 
     const DONE = done ? CHECK : UNCHECK;
@@ -10,19 +18,26 @@ function addItem(text, id, done, trash) {
                     <i class="fa fa-trash-o" job="delete" id="${id}"></i>
                     </li>`;
     const position = "beforeend";
-
     list.insertAdjacentHTML(position, item);
+
+    getList().push({
+        name: text,
+        id: id,
+        done: false,
+        trash: false
+    });
+    incrementId();
 }
 
-function completeToDo(element) {
+export function completeToDo(element) {
     element.classList.toggle(CHECK);
     element.classList.toggle(UNCHECK);
     element.parentNode.querySelector('.text')
         .classList.toggle(LINE_THROUGH);
-    LIST[element.id].done = !LIST[element.id].done;
+    getList()[element.id].done = !getList()[element.id].done;
 }
 
-function removeToDo(element) {
+export function removeToDo(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
-    LIST[element.id].trash = true;
+    getList()[element.id].trash = true;
 }
