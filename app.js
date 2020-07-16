@@ -2,6 +2,7 @@ const clear = document.querySelector('.clear-button');
 const date = document.getElementById('date');
 const list = document.getElementById('the-list');
 const input = document.getElementById('item-input');
+const add = document.getElementById('add-button');
 
 import {getDate} from "./date.js";
 import {completeToDo} from "./todolist.js";
@@ -34,3 +35,11 @@ clear.addEventListener('click', function () {
     sessionStorage.clear();
     location.reload();
 });
+
+add.addEventListener('click', function () {
+    let text = input.value;
+    if (text) {
+        addItem(list, text, getId(), false, false);
+    }
+    input.value = '';
+})

@@ -100,12 +100,16 @@ body {
     font-size: 36px;
     color: dodgerblue;
 }
+.fa-plus-circle:hover{
+    cursor: pointer;
+    color: blue;
+}
 #item-input{
     margin-left: 10px;
     font-size: 18px;
     padding: 5px;
     background: none;
-    border: 1px solid lightgray;
+    border: 2px solid dodgerblue;
     border-radius: 4px;
     width: 300px;
 }
