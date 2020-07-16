@@ -1,4 +1,4 @@
-const clear = document.querySelector('.clear-list');
+const clear = document.querySelector('.clear-button');
 const date = document.getElementById('date');
 const list = document.getElementById('the-list');
 const input = document.getElementById('item-input');
