@@ -1,4 +1,5 @@
 import readItemInput from "./readItem.js";
+import createNewItem from "./createItem.js";
 
 export default function enableAddingItems() {
     let button = document.getElementById('add-button');
@@ -10,11 +11,12 @@ function appendItem() {
     let text = readItemInput();
     let myList = document.getElementById('my-list');
     myList.appendChild(createNewItem(text));
+    clearInput();
 }
 
-function createNewItem(text) {
-    let node = document.createElement('li');
-    let item = document.createTextNode(text);
-    node.appendChild(item);
-    return node;
+function clearInput() {
+    let input = document.getElementById('item-input');
+    input.value = '';
 }
+
+
