@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="addItem.js"></script>
+</head>
+<body>
+<label for="item-input">Input item</label>
+<input id="item-input" type="text" />
+<button id="add-button">Add item</button>
+<ul id="my-list"></ul>
+<script type="module">
+    import enableAddingItems from "./addItem.js";
+    enableAddingItems();
+</script>
+</body>
+</html>
