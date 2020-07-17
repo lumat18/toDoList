@@ -9,8 +9,17 @@ import {completeToDo} from "./todolist.js";
 import {removeToDo} from "./todolist.js";
 import {addItem} from "./todolist.js";
 import {getId} from "./list.js";
+import {refreshList} from "./todolist.js";
+import {load} from "./init.js";
 
 date.innerHTML = getDate();
+
+document.addEventListener('keyup', function (event) {
+    if(event.key === ' '){
+        console.log('clicked!');
+        load();
+    }
+});
 
 document.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
@@ -34,6 +43,7 @@ list.addEventListener('click', function (event) {
 clear.addEventListener('click', function () {
     sessionStorage.clear();
     location.reload();
+    refreshList();
 });
 
 add.addEventListener('click', function () {

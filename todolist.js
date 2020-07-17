@@ -59,6 +59,26 @@ export function completeToDo(element) {
     element.parentNode.querySelector('.text')
         .classList.toggle(LINE_THROUGH);
     getList()[element.id].done = !getList()[element.id].done;
+    completeToDoInDb(element.id, getList()[element.id].done)
+        .then(response => response.json())
+        .then(json => console.log(json));
+}
+
+async function completeToDoInDb(id, done){
+    const api = 'http://localhost:8080/api/items/change';
+    const item = {
+        id: id,
+        name: null,
+        done: done
+    }
+    console.log(item);
+    return await fetch(api, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(item)
+    });
 }
 
 export function removeToDo(element) {
@@ -77,5 +97,12 @@ async function removeFromDb(id) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(id)
+    });
+}
+
+export async function refreshList() {
+    const api = 'http://localhost:8080/api/items/delete/all';
+    return await fetch(api, {
+        method: 'POST'
     });
 }
